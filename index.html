@@ -1,0 +1,132 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript Calculator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+      body {
+    background-color: #6e7479;
+}
+.container {
+    width: 300px;
+    background: #6e7479;
+    border-radius: 5px;
+    box-shadow: 0 15px 50px 0 rgba(0,0,0,0.4), 0 15px 20px 0 rgba(0,0,0,0.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    padding: 10px;
+}
+.heading {
+    text-align: left;
+    font-size: 22px;
+    color: #ffffff;
+    padding: 10px 0 0 10px;
+}
+.resultscreen {
+    height: 110px;
+    width: 100%;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background: #6e7479;
+
+}
+input[type='text'] {
+    width: 300px;
+    padding-right: 10px;
+    position: absolute;
+    bottom: 0;
+    border: none;
+    text-align: right;
+    font-size: 40px;
+    color: #000000;
+    background: #6e7479;
+}
+.line {
+    width: 300px;
+}
+input[type='button'] {
+    float: left;
+    font-size: 24px;
+    line-height: 70px;
+    margin: 1;
+    width: 73px;
+    height: 70px;
+    border: none;
+    color: #fafafa;
+    cursor: pointer;
+    outline: none;
+    background: #2d2d2d;
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+}
+input[type='button'][value='0'] {
+    border-bottom-left-radius: 5px;
+}
+input[type='button'][value='='] {
+    background: #2d2d2d;
+    color: #ffffff;
+    border-bottom-right-radius: 5px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form name="calculatorForm">
+            <div class="resultscreen">
+                <div class="heading">Kalkulator</div>
+                <input type="text" name="evalresult"/>
+            </div>
+            <div class="buttons">
+                <div class="line">
+                    <input type="button" name="btn7" value="7" onClick="valuecal(btn7.value)"/>
+                    <input type="button" name="btn8" value="8" onClick="valuecal(btn8.value)"/>
+                    <input type="button" name="btn9" value="9" onClick="valuecal(btn9.value)"/>
+                    <input type="button" name="btndivision" value="/" onClick="valuecal(btndivision.value)"/>
+                </div>
+                
+                <div class="line">
+                    <input type="button" name="btn4" value="4" onClick="valuecal(btn4.value)"/>
+                    <input type="button" name="btn5" value="5" onClick="valuecal(btn5.value)"/>
+                    <input type="button" name="btn6" value="6" onClick="valuecal(btn6.value)"/>
+                    <input type="button" name="btnmultiply" value="*" onClick="valuecal(btnmultiply.value)"/>
+                </div>
+                
+                <div class="line">
+                    <input type="button" name="btn1" value="1" onClick="valuecal(btn1.value)"/>
+                    <input type="button" name="btn2" value="2" onClick="valuecal(btn2.value)"/>
+                    <input type="button" name="btn3" value="3" onClick="valuecal(btn3.value)"/>
+                    <input type="button" name="btnsubtract" value="-" onClick="valuecal(btnsubtract.value)"/>
+                </div>
+                
+                <div class="line">
+                    <input type="button" name="btn0" value="0" onClick="valuecal(btn0.value)"/>
+                    <input type="button" name="btnDot" value="." onClick="valuecal(btnDot.value)"/>
+                    <input type="button" name="btnAddition" value="+" onClick="valuecal(btnAddition.value)"/>
+                    <input type="button" name="result" value="=" onClick="evalresult.value=eval(evalresult.value)"/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function valuecal(result){
+    calculatorForm.evalresult.value = calculatorForm.evalresult.value + result;
+    }
+    </script>
+</body>
+</html>
